@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Danijel Drazetic">
+    <link rel="stylesheet" href="styles/style.css"> 
+    <title>Slider</title>
+  
+</head>
+
+
+
+<body>
+
+<header></header>
+
+    <div class="container">
+
+<!--
+        <div class="slider_container">
+            <div class="firstrow">
+                <div class="picture_1" id="picture_1" ><img id="1" src="assets/slider-image-1.jpg" alt=""></div>
+                <div class="picture_2"><img id="2" src="assets/slider-image-2.jpg" alt=""></div>
+                <div class="picture_3"><img id="3" src="assets/slider-image-3.jpg" alt=""></div>
+                <div class="picture_4"><img id="4" src="assets/slider-image-4.jpg" alt=""></div>
+                <div class="picture_5"><img id="5" src="assets/slider-image-5.jpg" alt=""></div>
+
+            </div>
+-->
+<div class="slider_container">
+    <div class="firstrow">
+        <ul id="first_photos">
+         <li><img id="1" src="assets/slider-image-1.jpg" alt=""></li>
+         <li><img id="2" src="assets/slider-image-2.jpg" alt=""></li>
+         <li><img id="3" src="assets/slider-image-3.jpg" alt=""></li>
+         <li><img id="4" src="assets/slider-image-4.jpg" alt=""></li>
+         <li><img id="5" src="assets/slider-image-5.jpg" alt=""></li>
+
+        </ul>
+    </div>
+
+
+            <div class="secondrow">
+               <!-- <div class="images_secondrow">
+                    <div class="picture_6" id="picture" ><img src="assets/slider-image-6.jpg" alt=""></div>
+                    <div class="picture_7" id="picture"><img src="assets/slider-image-7.jpg" alt=""></div>
+                    <div class="picture_8" id="picture"><img src="assets/slider-image-8.jpg" alt=""></div>
+                    <div class="picture_9" id="picture"><img src="assets/slider-image-9.jpg" alt=""></div>
+                </div> -->
+                <div class="images_secondrow">
+                    <ul id="second_photos">
+                        <li ><img id="6" src="assets/slider-image-6.jpg" alt=""></li>
+                        <li ><img id="7" src="assets/slider-image-7.jpg" alt=""></li>
+                        <li ><img id="8" src="assets/slider-image-8.jpg" alt=""></li>
+                        <li ><img id="9" src="assets/slider-image-9.jpg" alt=""></li>
+                    </ul>
+                </div>
+
+                <div class="buttons_secondrow">
+                    <button type="image" id="button_prev" class="button_prev"></button>  
+                    <button type="image" id="button_next" class="button_next"></button>
+                </div>
+            </div>
+
+
+
+
+        </div> 
+
+        <div class="text_container">
+          <h1>Lorem ipsum dolor sit amet consectetuer adipiscing elit </h1>
+          <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper 
+              suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
+              Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
+        </div>
+
+    </div>
+
+    
+    
+   <footer></footer>
+
+
+</body>
+
+<script>
+
+/*
+$(document).ready(function(){
+
+  $("#button_prev").on("click", function(){
+  $("img#1").attr("src", "assets/slider-image-2.jpg");
+  $("img#2").attr("src", "assets/slider-image-3.jpg");
+  $("img#3").attr("src", "assets/slider-image-4.jpg");
+  $("img#4").attr("src", "assets/slider-image-5.jpg");
+  $("img#5").attr("src", "assets/slider-image-1.jpg");
+});
+
+$("#button_next").on("click", function(){
+  $("img#1").attr("src", "assets/slider-image-5.jpg");
+  $("img#2").attr("src", "assets/slider-image-1.jpg");
+  $("img#3").attr("src", "assets/slider-image-2.jpg");
+  $("img#4").attr("src", "assets/slider-image-3.jpg");
+  $("img#5").attr("src", "assets/slider-image-4.jpg");
+});
+});
+*/
+            $('#button_next').click(function(){
+                
+                 $('#first_photos li:last').prependTo($('#first_photos li').parent());
+                 
+            })
+
+            $('#button_prev').click(function(){
+                 $('#first_photos li:first').appendTo($('#first_photos li').parent());
+            })
+
+            $('#button_next').click(function(){
+                $('#second_photos li:last').prependTo($('#second_photos li').parent());
+            })
+
+            $('#button_prev').click(function(){
+                 $('#second_photos li:first').appendTo($('#second_photos li').parent());
+            })
+
+    </script>
+
+</html>
