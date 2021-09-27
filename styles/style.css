@@ -33,7 +33,7 @@ footer{
 }
 
 .text_container{
-   
+   background-color: #ffffff;
     flex: 1;
 }
 
@@ -71,6 +71,7 @@ footer{
      flex-direction: row;
      margin-left: -430px;
      margin-bottom: 5px;
+     overflow: hidden;
      
  }
 
@@ -84,21 +85,32 @@ footer{
 .images_secondrow{
     display: flex;
     flex-direction: row;
-    margin-left: -360px;
+    margin-left: -405px;
+    overflow: hidden;
     
 }
 
 .secondrow{
     display: flex;
     flex-direction: row;
+    
+}
+
+.white_space{
+    background-color: #ffffff;
+    min-width: 103px;
+    
+    
+   
 }
 
 .buttons_secondrow{
+    
     display: flex;
     flex-direction: column;
-    margin-left: auto;
+    margin-left: auto ; /*99px;*/
     margin-right: 10px;
-
+    z-index: 999;
 }
 
  .button_next{
@@ -154,30 +166,22 @@ ul{
   
 }
 
-ul li{
-    transition:  3.5s;
-}
+
 
 @media screen and (max-width: 940px) {
   
 
     .container{
         display: flex;
-        flex-direction: column;
+        flex-flow: column-reverse;
         
     }
 
-    .slider_container{
-
+    .text_container{
+   
         margin-left: auto;
         margin-right: auto;
-        }
-
-        .text_container{
-   
-            margin-left: auto;
-             margin-right: auto;
-            max-width: 600px;
+        max-width: 600px;
         }
 
   }
