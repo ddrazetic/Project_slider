@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap");
+body {
+  max-width: 939px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 100px;
+  background-color: #ffffff;
+  margin-bottom: 60px;
+}
+
+.headerbox1 {
+  border-radius: 0px 0px 5px 5px;
+  margin-right: 19px;
+  background-color: #DDDDDD;
+  -webkit-box-flex: 319;
+      -ms-flex: 319;
+          flex: 319;
+}
+
+.headerbox2 {
+  border-radius: 0px 0px 5px 5px;
+  -webkit-box-flex: 619;
+      -ms-flex: 619;
+          flex: 619;
+  background-color: #DDDDDD;
+}
+
+footer {
+  margin-top: 60px;
+  height: 100px;
+  background-color: #DDDDDD;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.slider_container {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  max-width: 620px;
+  /* overflow: hidden; */
+}
+
+.text_container {
+  background-color: #ffffff;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-left: 19px;
+}
+
+.text_container h1 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  color: #134880;
+  letter-spacing: -0.2px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.text_container p {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: -0.2px;
+  color: #484A4C;
+}
+
+.firstrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-left: -540px;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+
+.firstrow img {
+  height: 200px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.images_secondrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-left: -540px;
+  overflow: hidden;
+}
+
+.images_secondrow img {
+  height: 200px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.secondrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.white_space {
+  background-color: #ffffff;
+  min-width: 99px;
+  margin-left: 1px;
+}
+
+.buttons_secondrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: auto;
+  /*99px; */
+  margin-right: 0px;
+  z-index: 999;
+}
+
+.button_next {
+  border: 2px solid #DDDDDD;
+  border-radius: 5px;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  background-image: url("../assets/arrow-gray-right.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 10px;
+}
+
+.button_next:hover {
+  border: 2px solid #134880;
+  cursor: pointer;
+  background: url("../assets/arrow-blue-right.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+}
+
+.button_prev {
+  border: 2px solid #DDDDDD;
+  border-radius: 5px;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  background-image: url("../assets/arrow-gray-left.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 10px;
+}
+
+.button_prev:hover {
+  border: 2px solid #134880;
+  cursor: pointer;
+  background: url("../assets/arrow-blue-left.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+}
+
+ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style-type: none;
+  margin: 0px;
+}
+
+@media screen and (max-width: 940px) {
+  .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: column-reverse;
+            flex-flow: column-reverse;
+  }
+  .text_container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 600px;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

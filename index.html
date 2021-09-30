@@ -1,150 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Danijel Drazetic">
-    <link rel="stylesheet" href="styles/style.css"> 
-    <title>Slider</title>
-  
-</head>
-
-
-
-<body>
-
-<header></header>
-
-    <div class="container">
-
-
-        <div class="slider_container">
-            <div class="firstrow">
-                <ul id="first_photos">
-                    <li><img id="img1" src="assets/slider-image-1.jpg" alt=""></li>
-                    <li><img id="img2" src="assets/slider-image-2.jpg" alt=""></li>
-                    <li><img id="img3" src="assets/slider-image-3.jpg" alt=""></li>
-                    <li><img id="img4" src="assets/slider-image-4.jpg" alt=""></li>
-                    <li><img id="img5" src="assets/slider-image-5.jpg" alt=""></li>
-                
-                </ul>
-            </div>
-
-
-            <div class="secondrow">
-                <div class="images_secondrow">
-                    <ul id="second_photos">
-                        <li ><img id="img6" src="assets/slider-image-6.jpg" alt=""></li>
-                        <li ><img id="img7" src="assets/slider-image-7.jpg" alt=""></li>
-                        <li ><img id="img8" src="assets/slider-image-8.jpg" alt=""></li>
-                        <li ><img id="img9" src="assets/slider-image-9.jpg" alt=""></li>
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script  src="scripts/script.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Danijel Drazetic">
+        <link rel="stylesheet" href="styles/styles.css"> 
+        <title>Slider</title>
+    </head>
+    <body>
+        <header>
+            <div class="headerbox1"></div>
+            <div class="headerbox2"></div>
+        </header>
+        <div class="container">
+            <div class="slider_container">
+                <div class="firstrow">
+                    <ul id="first_photos">
+                        <li><img id="img10" src="assets/slider-image-10.png" alt=""></li>
+                        <li><img id="img1" src="assets/slider-image-1.jpg" alt=""></li>
+                        <li><img id="img2" src="assets/slider-image-2.jpg" alt=""></li>
+                        <li><img id="img3" src="assets/slider-image-3.jpg" alt=""></li>
+                        <li><img id="img4" src="assets/slider-image-4.jpg" alt=""></li>
+                        <li><img id="img5" src="assets/slider-image-5.jpg" alt=""></li>
                     </ul>
                 </div>
-                
-                <div class="white_space"></div>
-
-                <div class="buttons_secondrow">
-                    <button type="image" id="button_prev" class="button_prev"></button>  
-                    <button type="image" id="button_next" class="button_next"></button>
+                <div class="secondrow">
+                    <div class="images_secondrow">
+                        <ul id="second_photos">
+                            <li><img id="img11" src="assets/slider-image-11.png" alt=""></li>
+                            <li ><img id="img6" src="assets/slider-image-6.jpg" alt=""></li>
+                            <li ><img id="img7" src="assets/slider-image-7.jpg" alt=""></li>
+                            <li ><img id="img8" src="assets/slider-image-8.jpg" alt=""></li>
+                            <li ><img id="img9" src="assets/slider-image-9.jpg" alt=""></li>
+                        </ul>
+                    </div>
+                    <div class="white_space"></div>
+                    <div class="buttons_secondrow">
+                        <button type="image" id="button_prev" class="button_prev"></button>  
+                        <button type="image" id="button_next" class="button_next"></button>
+                    </div>
                 </div>
+            </div> 
+            <div class="text_container">
+            <h1>Lorem ipsum dolor sit amet consectetuer adipiscing elit </h1>
+            <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper 
+                suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
+                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
             </div>
-
-
-
-
-        </div> 
-
-        <div class="text_container">
-          <h1>Lorem ipsum dolor sit amet consectetuer adipiscing elit </h1>
-          <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper 
-              suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
-              Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
         </div>
-
-    </div>
-
-    
-    
-   <footer></footer>
-
-
-</body>
-
-<script>
-
-
-    $('#button_next').click(function(){
-              
-        $('#button_next').attr("disabled", true);
-        $('#first_photos').animate({
-                marginLeft: $('#first_photos li:last').width()
-        });
-
-        $('#first_photos li:last')
-            .delay(500)
-            .queue(function (next) {
-                $('#first_photos li').parent().prepend($(this));
-                $('#first_photos').css("margin-left", "0");
-                next();
-                });
-
-        $('#second_photos').animate({
-                marginLeft: $('#second_photos li:last').width()
-        });
-                    
-        $('#second_photos li:last')
-            .delay(500)
-            .queue(function (next) {
-                $('#second_photos li').parent().prepend($(this));
-                $('#second_photos').css("margin-left", "0");
-                $('#button_next').attr("disabled", false);
-                next();
-                });
-
-       
-    });
-
-   
-
-
-
-    $('#button_prev').click(function(){
-        
-        $('#button_prev').attr("disabled", true);
-        $('#first_photos li').parent().append($('#first_photos li:first').clone());
-        $('#first_photos').animate({
-            marginLeft: -$('#first_photos li:first').width()
-            });
-
-       $('#first_photos li:first')
-            .delay(500)
-            .queue(function (next) {
-                $('#first_photos li:first').remove();
-                $('#first_photos').css("margin-left", "0");
-                next();
-                });
-
-        $('#second_photos li').parent().append($('#second_photos li:first').clone());
-        $('#second_photos').animate({
-            marginLeft: -$('#second_photos li:first').width()
-            });
-
-       $('#second_photos li:first')
-            .delay(500)
-            .queue(function (next) {
-                $('#second_photos li:first').remove();
-                $('#second_photos').css("margin-left", "0");
-                $('#button_prev').attr("disabled", false);
-                next();
-                });
-
-    });
-
-
-    
-
-   
-    </script>
-
+    <footer></footer>
+    </body>
 </html>
