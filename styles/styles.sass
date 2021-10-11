@@ -1,97 +1,116 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap')
+@import "variables.sass";
+
+@mixin flex-row
+  display: flex
+  flex-direction: row
+
+@mixin image_atributes
+  height: 200px
+  margin-left: 10px
+  border-radius: 5px
+
+@mixin button_atributes
+  border: 2px solid $header_color
+  border-radius: 5px
+  width: 60px
+  height: 60px
+  background-color: white
+  background-repeat: no-repeat
+  background-position: center
+  margin-bottom: 10px
+  
+@mixin button_hover
+  border: 2px solid $button_color
+  cursor: pointer
+  background-repeat: no-repeat
+  background-position: center
+  background-color: white    
+
 
 body
   max-width: 939px
   margin-right: auto
   margin-left: auto
-
+  
 header
-  display: flex
-  flex-direction: row
+  @include flex-row
   height: 100px
-  background-color: #ffffff
+  background-color: $white_color
   margin-bottom: 60px
 
-.headerbox1
-  border-radius: 0px 0px 5px 5px
-  margin-right: 19px
-  background-color: #DDDDDD
-  flex: 319
+  .headerbox1
+    border-radius: 0px 0px 5px 5px
+    margin-right: 19px
+    background-color: $header_color
+    flex: 319
 
-.headerbox2
-  border-radius: 0px 0px 5px 5px
-  flex: 619
-  background-color: #DDDDDD
+  .headerbox2
+    border-radius: 0px 0px 5px 5px
+    flex: 619
+    background-color: $header_color
 
 footer
   margin-top: 60px
   height: 100px
-  background-color: #DDDDDD
+  background-color: $header_color
   border-radius: 5px 5px 0px 0px
 
 .container
-  display: flex
-  flex-direction: row
+  @include flex-row
+  
 
 .slider_container
   flex: 2
   max-width: 620px
-
   /* overflow: hidden;
 
+  .firstrow
+    img
+      @include image_atributes
+      
+    @include flex-row
+    margin-left: -540px
+    margin-bottom: 5px
+    overflow: hidden
+
+  .secondrow
+    @include flex-row
+
+    .images_secondrow
+      img
+        @include image_atributes
+
+      @include flex-row
+      margin-left: -540px
+      overflow: hidden
+  
 .text_container
-  background-color: #ffffff
+  background-color: $white_color
   flex: 1
   margin-left: 19px
 
   h1
-    font-family: 'Source Sans Pro', sans-serif
+    font-family: $font
     font-style: normal
     font-weight: bold
     font-size: 32px
-    color: #134880
+    color: $button_color
     letter-spacing: -0.2px
     margin-top: 0px
     margin-bottom: 20px
 
   p
-    font-family: 'Source Sans Pro', sans-serif
+    font-family: $font
     font-style: normal
     font-weight: normal
     font-size: 18px
     line-height: 26px
     letter-spacing: -0.2px
-    color: #484A4C
-
-.firstrow
-  img
-    height: 200px
-    margin-left: 10px
-    border-radius: 5px
-
-  display: flex
-  flex-direction: row
-  margin-left: -540px
-  margin-bottom: 5px
-  overflow: hidden
-
-.images_secondrow
-  img
-    height: 200px
-    margin-left: 10px
-    border-radius: 5px
-
-  display: flex
-  flex-direction: row
-  margin-left: -540px
-  overflow: hidden
-
-.secondrow
-  display: flex
-  flex-direction: row
+    color: $text_p_color
 
 .white_space
-  background-color: #ffffff
+  background-color: $white_color
   min-width: 99px
   margin-left: 1px
 
@@ -99,52 +118,28 @@ footer
   display: flex
   flex-direction: column
   margin-left: auto
-
   /*99px;
   margin-right: 0px
   z-index: 999
 
-.button_next
-  border: 2px solid #DDDDDD
-  border-radius: 5px
-  width: 60px
-  height: 60px
-  background-color: white
-  background-image: url('../assets/arrow-gray-right.png')
-  background-repeat: no-repeat
-  background-position: center
-  margin-bottom: 10px
+  .button_next
+    @include button_atributes
+    background-image: url('../assets/arrow-gray-right.png')
 
-  &:hover
-    border: 2px solid #134880
-    cursor: pointer
-    background: url("../assets/arrow-blue-right.png")
-    background-repeat: no-repeat
-    background-position: center
-    background-color: white
-
-.button_prev
-  border: 2px solid #DDDDDD
-  border-radius: 5px
-  width: 60px
-  height: 60px
-  background-color: white
-  background-image: url('../assets/arrow-gray-left.png')
-  background-repeat: no-repeat
-  background-position: center
-  margin-bottom: 10px
-
-  &:hover
-    border: 2px solid #134880
-    cursor: pointer
-    background: url("../assets/arrow-blue-left.png")
-    background-repeat: no-repeat
-    background-position: center
-    background-color: white
+    &:hover
+      background: url("../assets/arrow-blue-right.png")
+      @include button_hover
+      
+  .button_prev
+    @include button_atributes
+    background-image: url('../assets/arrow-gray-left.png')
+    
+    &:hover
+      background: url("../assets/arrow-blue-left.png")
+      @include button_hover
 
 ul
-  display: flex
-  flex-direction: row
+  @include flex-row
   list-style-type: none
   margin: 0px
 
